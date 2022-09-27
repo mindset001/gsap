@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css//cube.css">
+    <title>cube</title>
+</head>
+<body>
+    <div class="container">
+        <div class="scene">
+            <div class="track">
+                <div class="walker walker--1">
+                    <div class="cube cube--1">
+                        <div class="face face--front">1</div>
+                        <div class="face face--back">2</div>
+                        <div class="face face--left"></div>
+                        <div class="face face--right"></div>
+                        <div class="face face--top"></div>
+                        <div class="face face--bottom"></div>
+                    </div>
+                    <div class="cube cube--2">
+                        <div class="face face--front"></div>
+                        <div class="face face--back"></div>
+                        <div class="face face--left"></div>
+                        <div class="face face--right"></div>
+                        <div class="face face--top"></div>
+                        <div class="face face--bottom"></div>
+                    </div>
+                </div>
+                <div class="walker walker--2">
+                    <div class="cube cube--1">
+                        <div class="face face--front">3</div>
+                        <div class="face face--back">4</div>
+                        <div class="face face--left"></div>
+                        <div class="face face--right"></div>
+                        <div class="face face--top"></div>
+                        <div class="face face--bottom"></div>
+                    </div>
+                    <div class="cube cube--2">
+                        <div class="face face--front"></div>
+                        <div class="face face--back"></div>
+                        <div class="face face--left"></div>
+                        <div class="face face--right"></div>
+                        <div class="face face--top"></div>
+                        <div class="face face--bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div class="collection">
+        <a class="collection__link" href="https://codepen.io/collection/02388423440b98155f8e4002bde094f2" target='_blank'>View the collection<span></span></a>
+    </div>
+    
+    <a href="https://greensock.com" target="_blank"><img class="gsap-3-logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-3-logo.svg" width="150" /></a>
+     -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"></script>
+
+<script>
+    console.clear();
+
+var styleVars = getComputedStyle(document.documentElement),
+	cubeWidth = styleVars.getPropertyValue('--cube-size').replace("px", ""),
+	stepDuration = 0.6;
+
+gsap.set('.container', { y: "10vh" });
+
+function walk() {
+	gsap.timeline({ repeat: -1, defaults:{ ease:"power2.inOut", duration:stepDuration }})
+		.to('.cube--2', { rotationZ: -180, transformOrigin: "left top" })
+		.set('.cube--2', { x: -cubeWidth*2, transformOrigin: "right top" })
+		.to('.cube--2', { rotationZ: -360 })
+		.to('.cube--1', { rotationZ: -180, transformOrigin: "left top" })
+		.set('.cube--1', { x: -cubeWidth*2, transformOrigin: "right top" })
+		.to('.cube--1', { rotationZ: -360 })
+		.to('.track', { x: cubeWidth*2, duration: stepDuration*4, ease: "none" }, 0)
+}
+
+function intro() {
+	gsap.timeline({ onComplete: walk, delay: 0.5, defaults:{ ease:"power1.in" } })
+		.set('.container', { autoAlpha: 1 })
+		.from('.cube--1', { scaleY: 0, x: -cubeWidth*2, transformOrigin: "50% 100%", duration: 0.7 })
+		.to('.cube--1', { keyframes:[{ y: -cubeWidth*2, ease: Power2.easeOut, duration: 0.6 }, { y: 0, ease: "power2.in" }]})
+		.from('.cube--2', { scaleY: 0, x: cubeWidth*2, transformOrigin: "50% 100%", duration: 0.7 }, 0.1)
+		.to('.cube--2', { keyframes:[{ y: -cubeWidth*2, ease: Power2.easeOut, duration: 0.6 }, { y: 0, ease: "power2.in" }]}, 0.4)
+		.to('.track', { rotationY: 360, duration: 1.5, ease: "power4.inOut" }, 0)
+		.from('.face', { opacity: 0, duration: 1.5, ease: "power4" }, 0)
+}
+
+window.onload = (event) => {
+	intro();
+};
+</script>
+</body>
+</html>
