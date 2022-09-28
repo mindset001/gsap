@@ -12,8 +12,8 @@ html {
 }
 
 body {
-	background: white;
-	background: radial-gradient(#ffffff 25%, #d5d3d5 75%);
+	// background: white;
+	// background: radial-gradient(#ffffff 25%, #d5d3d5 75%);
 	overflow: hidden;
 	font-size: 10px;
 }

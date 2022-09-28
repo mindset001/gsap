@@ -1,85 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css//main.css">
-    <link href='//fonts.googleapis.com/css?family=Signika+Negative:300,400' rel='stylesheet' type='text/css'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/cube.css">
+  <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+  <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+  <title>L@zyC0der</title>
+
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body>
-    <div class="hero">
-       
-        <main>
-            <div class="content">
-               
 
-                <h1 class="anim1"><span>Bridging the gap</span> <span>between dream</span> <span>and reality</span> <span> <div class="box green" style="width: 50px;height: 50px, ">hy</div></span></h1>
-                <p class="anim1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio at ipsa alias modi natus excepturi?</p>
-                <div class="nav">
-                    <button id="play">play()</button>
-                    <button id="pause">pause()</button>
-                    <button id="resume">resume()</button>
-                    <button id="reverse">reverse()</button>
-                    <button id="restart">restart()</button>
-                  </div>
-                
-                <a href="#" class="anim1" id="cta">Start Dreaming</a>
-                <a href="./cube.html">next</a>
-               
-            </div>
-        </main>
-    
-        <aside>
-            <div class="wrapper">
-                <img class="swirl" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/swirl.png" alt="Swirl Graphic">
-            </div>
-    </aside>
-    
-    </div>
-
+  <!-- <div class="overlay">
+    <h1>LazyCoder</h1>
+    <span>front-end engineer</span>
+  </div> -->
+        <!-- preloader -->
+  <div class="overlay">
    
+    <div class="container">
+        <div class="scene">
+            <div class="track">
+                <div class="walker walker--1">
+                    <div class="cube cube--1">
+                        <div class="face face--front">1</div>
+                        <div class="face face--back">2</div>
+                        <div class="face face--left"></div>
+                        <div class="face face--right"></div>
+                        <div class="face face--top"></div>
+                        <div class="face face--bottom"></div>
+                    </div>
+                    <div class="cube cube--2">
+                        <div class="face face--front"></div>
+                        <div class="face face--back"></div>
+                        <div class="face face--left"></div>
+                        <div class="face face--right"></div>
+                        <div class="face face--top"></div>
+                        <div class="face face--bottom"></div>
+                    </div>
+                </div>
+                <div class="walker walker--2">
+                    <div class="cube cube--1">
+                        <div class="face face--front">3</div>
+                        <div class="face face--back">4</div>
+                        <div class="face face--left"></div>
+                        <div class="face face--right"></div>
+                        <div class="face face--top"></div>
+                        <div class="face face--bottom"></div>
+                    </div>
+                    <div class="cube cube--2">
+                        <div class="face face--front"></div>
+                        <div class="face face--back"></div>
+                        <div class="face face--left"></div>
+                        <div class="face face--right"></div>
+                        <div class="face face--top"></div>
+                        <div class="face face--bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>LazyCoder</h1>
+    <span>front-end engineer</span>
+  </div>
+
+  <!-- end preloader -->
+
+  <div class="new-lay"  id="myLinks">
+   
+    <h1 style="color: #BD523D; font-size: 100px; text-align: right; padding-right: 140px; cursor: pointer; font-weight: 100;" onclick="myFunction()" >
+      <img src="./images/x.svg" alt="" >
+      </h1>
+     
+    <div class="menu">
+     
+      <ul>
+        <li>home.</li>
+        <li>contact.</li>
+        <li>Resume.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrapper">
+
+    <div class="nav">
+      <div class="logo">
+        <h1>
+          <span>lazy <br> coder</span>
+          <br>
+          <!-- web/mobile developer -->
+        </h1>
+      </div>
+
+     
+
+      <div class="scrolldown">scroll</div>
+    </div>
+    
+ <div>
+  
+
+
+<div class="text">
+  
  
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
-<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"></script>
 
-<script>
+</div>
 
-    var rule = CSSRulePlugin.getRule("span:after")
-    // gsap.from('.anim1', {opacity: 0, duration: 1, y: -50, stagger: 0.6})
-    // gsap.from('img', {duration: 1, opacity: 0, y: 50, delay: 1.4 })
-    // gsap.to(rule, {cssRule: {scaleY: 0}, duration: 1})
-    // gsap.from('aside', {duration: 1, opacity: 0, backgroundPosition: '200px 0', delay: 1})
+  <div class="text">
+    <div class="navy" style="cursor: pointer;"" onclick="myFunction()"   >
+       
+      <img src="./images/align-right.svg" alt="" height="50px" width="50px">
+     
+      
+  </div>
+  
+    
+  <div class="title">Moshood Shittu</div>
+  
+  <p> I build new projects just to tickle my brain <br>and love teaching others how they're made.</p>
+</div>
+ </div>
 
+    <div class="watchnow">
+      <i class="fa fa-play"></i>
+      <a href="#">Projects!</a>
+    </div>
 
-    var tl = gsap.timeline({dafaults: {duration:1}})
-    tl.from('.anim1', {opacity: 0, y: -50, stagger: 0.6})
-    .to(rule, {cssRule: {scaleY: 0}, duration: 1.8}, "-=2.2")
-    .from('aside', { opacity: 0, backgroundPosition: '200px 0'}, "-=1.5")
-    .from('img', { opacity: 0, y: 50, }, "-=1.5")
+    <div class="media">
+      <ul>
+        <li><i class="fa fa-facebook"></i></li>
+        <li><i class="fa fa-twitter"></i></li>
+        <li><i class="fa fa-instagram"></i></li>
+      </ul>
+    </div>
 
-    document.getElementById('cta').addEventListener('click', () => {
-        tl.reversed() ? tl.play() : tl.reverse()
-    })
+    <div class="ellipse-container">
+      <div class="ellipse thin"></div>
+      <div class="ellipse thick"></div>
+      <div class="ellipse yellow"></div>
+      <div class="circle1"><span>Vanilla/Vue/React/ReactNative</span></div>
+      <div class="circle2"><span>Web/Mobile Development</span></div>
+    </div>
 
-    var tween = gsap.to(".green", {
-  duration: 4, 
-  x: 750, 
-  rotation: 360, 
-  ease: "none", 
-  paused: true
-});
+  </div>
 
-// click handlers for controlling the tween instance...
-document.querySelector("#play").onclick = () => tween.play();
-document.querySelector("#pause").onclick = () => tween.pause();
-document.querySelector("#resume").onclick = () => tween.resume();
-document.querySelector("#reverse").onclick = () => tween.reverse();
-document.querySelector("#restart").onclick = () => tween.restart();
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"></script>
+  <script src="./script/index.js"></script>
+  <script src="./script/cube.js"></script>
+  <script>
 
-</script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
 
+  </script>
 </body>
+
 </html>
