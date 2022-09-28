@@ -1,4 +1,4 @@
-// TweenMax.from('.new-lay',1, {delay: 1, opacity:0, ease: Expo.easeInOut})
+TweenMax.from('.wrapper',1, {delay: 4, opacity:0, y: 1000, ease: Expo.ease})
 
 TweenMax.to(".overlay h1", 2, {
     delay: 4,
