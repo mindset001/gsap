@@ -156,6 +156,7 @@
     bottom: 0;
     right: 0;
     padding: 20px;
+    margin-right: 40px;
   }
   
   .media ul li {
@@ -170,6 +171,10 @@
   .media ul li:hover {
     background:  #BD523D;
     color: #fff;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%
+    transition:color .4s ease-out, background 3s ease-out;
   }
   
   .ellipse-container {

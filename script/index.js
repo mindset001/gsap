@@ -52,20 +52,6 @@ TweenMax.from(".logo", 1, {
   ease: Expo.easeInOut
 })
 
-TweenMax.staggerFrom(".menu-links ul li", 1, {
-  delay: 3.2,
-  opacity: 0,
-  x: -100,
-  ease: Expo.easeInOut
-}, 0.08)
-
-TweenMax.from(".scrolldown", 1, {
-  delay: 3.4,
-  opacity: 0,
-  y: 100,
-  ease: Expo.easeInOut
-})
-
 TweenMax.from(".text .title", 1, {
   delay: 5,
   opacity: 0,
