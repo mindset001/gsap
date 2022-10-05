@@ -87,7 +87,7 @@
   }
   
   .nav .profile .img {
-    background-image: url('./img/profile.jpg');
+    background-image: url('../images/7xm.xyz624000.jpg');
     background-position: 50%;
     background-size: cover;
     height: 30px;
@@ -102,9 +102,10 @@
   }
   
   .img-wrapper .karina {
-    background-image: url('./img/karina.jpg');
+    // background-image: url('../images/7xm.xyz624000.jpg');
     background-size: cover;
-    height: 550px;
+    height: 1000px;
+    z-index: -1;
     width: 0;
   }
   

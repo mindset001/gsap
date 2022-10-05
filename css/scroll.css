@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+}
+.div1, .div2{
+    height: 100vh;
+}
+
+.div1{
+    background: pink;
+}
+.div2{
+    background: cyan;
+}
+.square{
+    height: 20vh;
+    width: 150px;
+    background: red;
+}
+.blue{
+
+    background: blue;
+}
