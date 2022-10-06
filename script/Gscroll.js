@@ -28,7 +28,56 @@ var scene = new ScrollMagic.Scene({
 // .addIndicators({ name: "2 (duration: 100)" }) // add indicators (requires plugin)
 .addTo(controller);
 
+// macque
+var $tickerWrapper = $(".tickerwrapper");
+var $new = $(".new");
+var $list = $tickerWrapper.find("ul.list");
+var $lining = $tickerWrapper.find(".lining");
+var $clonedList = $list.clone();
+var $clonedLine = $lining.clone();
+var listWidth = 12;
+		$list.find("li").each(function (i) {
+			listWidth += $(this, i).outerWidth(true);
+		});
+var lineWidth = 12;
+		$list.find(".lining").each(function (i) {
+			lineWidth += $(this, i).outerWidth(true);
+		});
+var endPos = $tickerWrapper.width() - listWidth;
+var endPos = $new.width() - lineWidth;
 
+$list.add($clonedList).css({
+	"width" : listWidth + "px"
+});
+$lining.add($clonedLine).css({
+	"width" : lineWidth + "px"
+});
+
+$clonedList.addClass("cloned").appendTo($tickerWrapper);
+$clonedLine.addClass("cloned").appendTo($new);
+//TimelineMax
+var infinite = new TimelineMax({force3D:true, repeat: -1, paused: false});
+var time = 20;
+
+infinite.fromTo($list, time, {x:0}, {x: -listWidth, ease: Linear.easeNone}, 0);
+infinite.fromTo($lining, time, {x:0}, {x: -lineWidth, ease: Linear.easeNone}, 0);
+infinite.fromTo($clonedList, time, {x:listWidth}, {x:0, ease: Linear.easeNone}, 0);
+infinite.fromTo($clonedLine, time, {x:lineWidth}, {x:0, ease: Linear.easeNone}, 0);
+infinite.set($lining, {x: lineWidth});
+infinite.set($list, {x: listWidth});
+infinite.to($clonedList, time, {x: -listWidth, ease: Linear.easeNone}, time);
+infinite.to($clonedLine, time, {x: -lineWidth, ease: Linear.easeNone}, time);
+infinite.to($list, time, {x: 0, ease: Linear.easeNone}, time);
+infinite.to($lining, time, {x: 0, ease: Linear.easeNone}, time);
+//Pause/Play
+				
+$tickerWrapper.on("mouseenter", function(){
+	infinite.pause();
+}).on("mouseleave", function(){
+	infinite.play();
+});
+
+// end of macque
 
 
 
@@ -36,6 +85,7 @@ var scene = new ScrollMagic.Scene({
 // Tween - Section 3
 var scene = new ScrollMagic.Scene({
 	triggerElement: "#section3",
+    triggerElement: "#my-text",
 	duration: 300
 })
 
@@ -91,9 +141,9 @@ var cursor = document.querySelector(".cursor"),
     const myText = new SplitType('#my-text')
 
         gsap.to('.word', {
-            y: 0,
+            y: 7,
             stagger: 0.05,
-            delay: 0.1,
+            delay: 0.3,
             duration: .1
         })
 

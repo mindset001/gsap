@@ -3,6 +3,7 @@
 
 html {
   background-color: #dbad84;
+  // background-color:rgb(153,149,147);
   height: 100%;
   line-height: 1.5;
   overflow-x: hidden;
@@ -35,7 +36,7 @@ html, body {
     z-index: 1000;
 }
 .grow, .grow-small {
-    transform: scale(10);
+    transform: scale(5);
     background: red;
     mix-blend-mode: difference;
     border: none;
@@ -57,6 +58,7 @@ h1, h2, h3, h4 {
   font-family: "Abril Fatface", sans-serif;
   font-weight: 400;
   letter-spacing: 1.5px;
+  font-size: 30px;
 }
 
 h1 {
@@ -66,16 +68,29 @@ h1 {
 }
 
 .contain {
-  margin: 0 10%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
-
+.container {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: -10%
+}
+.containing {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: -20%
+}
 .hero-text {
   width: 80%;
   float: left;
 }
 
+#my-text{
+  font-size: 20px;
+}
 .cat{
-  font-size: 18px;
+  font-size: 28px;
   letter-spacing: 2px;
   position: relative;
   display: inline-block;
@@ -111,10 +126,8 @@ h1 {
   font-size: 1.2rem;
   
 }
-#my-text{
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-  
-}
+ 
+
 .word {
   transform: translateY(315px);
   transition: transform .5s;
@@ -159,3 +172,38 @@ h1 {
      padding-bottom: 20px;
   }
 }
+
+
+// macque
+
+.line{
+  // width: 100%;
+  // height: 300px;
+  background-color: black;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+.tickerwrapper { /* the outer div */
+position:relative;
+width: 99.9%; 
+height: 80px; 
+overflow: hidden; 
+}
+ul.list {
+position:relative;
+display:inline-block;
+list-style:none;
+}
+ul.list.cloned {
+position:absolute;
+top:0;
+left:0;
+}
+ul.list li {
+float: left;
+padding-left:40px;
+font-family: "Arial Black", Gadget, sans-serif;
+  font-size:40pt;  
+font-weight: 400;
+text-transform: uppercase;
+}
+// end of macque
